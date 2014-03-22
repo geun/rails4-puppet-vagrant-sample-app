@@ -1,0 +1,7 @@
+servers:
+  'www.example.com':
+    :roles:
+      - 'www.example.com'
+  'db.example.com':
+    :roles:
+      - 'mysql'

@@ -1,0 +1,29 @@
+require 'pp'
+
+namespace :util do
+  task :testfile do
+    on roles(:all).each do |s|
+      server = hiera_get_server s
+      #pp server
+
+      f = "#{fetch(:vagrant_data)}/tpl/Vagrantfile.#{server[:cloud]}.erb"
+      #if test "[ -e #{f} ]"
+      #  puts true
+      #else
+      #  puts false
+      #end
+
+      if test("[ -e capistarno/vagrant/tpl/Vagrantfile.#{server[:cloud]}.erb ]")
+        puts "ok!!!!!! fuck "
+
+      end
+      #if test("[ -e #{fetch(:vagrant_data)}/tpl/Vagrantfile.#{server[:cloud]}.erb ]")
+      #  puts "true"
+      #else
+      #  puts "false"
+      #end
+
+
+    end
+  end
+end

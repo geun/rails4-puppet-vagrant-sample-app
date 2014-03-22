@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'puma'
 gem 'rolify'
 gem 'simple_form'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -29,12 +30,21 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
+
+
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-rails'
+gem 'sshkit', :git => 'https://github.com/capistrano/sshkit'
+gem 'capistrano-modules', :git=>"https://github.com/geun/capistrano-modules"
+gem 'hiera'

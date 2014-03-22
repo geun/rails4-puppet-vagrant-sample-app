@@ -1,0 +1,4 @@
+servers:
+  'www.example.com'
+    'roles':
+      - 'apache'
