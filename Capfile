@@ -36,7 +36,9 @@ set :ssh_data, 'deployment/ssh'
 set :vagrant_data, 'deployment/vagrant'
 
 #build hiera
+cap_info "start hiera_build_servers_from_stage"
 hiera_build_servers_from_stage ARGV[0]
+cap_info "end hiera build"
 
 #set ssh_options via hiera
 set :ssh_options, hiera('ssh_options')
